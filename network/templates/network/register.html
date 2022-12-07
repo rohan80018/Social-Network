@@ -1,0 +1,32 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+
+    <h2 style="color: rgb(187,225,255);margin-bottom: 30px;">Register</h2>
+
+    {% if message %}
+        <div id="msg">{{ message }}</div>
+    {% endif %}
+
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <input id="log" class="form-control" autofocus type="text" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <input id="log" class="form-control" type="email" name="email" placeholder="Email Address">
+        </div>
+        <div class="form-group">
+            <input id="log" class="form-control" type="password" name="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <input id="log" class="form-control" type="password" name="confirmation" placeholder="Confirm Password">
+        </div>
+        
+        <input style="margin-left:60px;" class="btn btn-primary" type="submit" value="Register">
+    </form>
+
+    <p style="color: rgb(201, 196, 196);margin-top:20px;">Already have an account? <a href="{% url 'login' %}">Log In here.</a></p>
+
+{% endblock %}

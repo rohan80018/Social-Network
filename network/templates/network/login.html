@@ -1,0 +1,27 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+
+    <h2 style="color: rgb(187,225,255);margin-bottom: 30px;">Login</h2>
+
+    {% if message %}
+        <div id="msg">{{ message }}</div>
+    {% endif %}
+
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        
+        <div  class="form-group">
+            <input id="log" autofocus class="form-control" type="text" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <input id="log" class="form-control" type="password" name="password" placeholder="Password">
+        </div>
+        
+        <input style="margin-left:60px;" class="btn btn-primary" type="submit" value="Login">
+
+    </form>
+
+    <p style="color: rgb(201, 196, 196);margin-top:20px;">Don't have an account? <a href="{% url 'register' %}">Register here.</a></p>
+
+{% endblock %}

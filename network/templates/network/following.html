@@ -1,0 +1,59 @@
+{% extends 'network/layout.html' %}
+
+{% load static %}
+{% block body %}
+    {% block script %}
+        <script type="text/javascript" src="{% static 'network/script.js' %}"></script>
+    {% endblock %}
+    <div class="container">
+    <h3 style=" margin-bottom:30px;margin-top: 20px; color:rgb(187,225,255);">Following</h3>
+    {% for data in datas %}
+        {% if data.content_img %}
+            <div class="card">
+                <img src="{{data.content_img.url}}" class="card-img-top" alt="...">
+                <div class="card-body" >
+                    <h6><a href="{% url 'profile' id=data.creater.id %}">{{data.creater}}</a></h6>
+                    <p class="card-text">{{data.content}}</p>
+                    <hr color="grey">
+                    <div style="display: flex; justify-content: space-between;">
+                        <p id="lik-{{data.id}}" >{{data.likes}}<div  id="heart" onclick="likeUnlike('{{data.id}}')" ></div></p>
+                        <p >{{data.timestamp}}</p>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="card">
+                <div class="card-body" >
+                    <h6><a href="{% url 'profile' id=data.creater.id %}">{{data.creater}}</a></h6>
+                    <p class="card-text">{{data.content}}</p>
+                    <hr color="grey">
+                    <div style="display: flex; justify-content: space-between;">
+                        <p id="lik-{{data.id}}" >{{data.likes}}<div id="heart" onclick="likeUnlike('{{data.id}}')" ></div></p>
+                        <p >{{data.timestamp}}</p>
+                    </div>
+                </div>
+            </div>  
+        {% endif %} 
+    {%endfor%}
+    <div class="pagination" style="margin-bottom: 40px;color:rgb(201, 201, 202);">
+        <span class="step-links">
+            
+            <div style="display: flex; justify-content:space-around;">
+            <div id="page">
+            <span class="current">
+                Page {{ datas.number }} of {{ datas.paginator.num_pages }}
+            </span>
+            </div>
+            {% if datas.has_previous %}
+                <a style="margin-left: 3px; margin-right: 6px;" href="?page={{ datas.previous_page_number }}">Previous</a>
+                <a href="?page=1">&laquo; First</a>
+            {% endif %}
+            {% if datas.has_next %}
+                <a style="margin-left: 3px; margin-right: 6px;" href="?page={{ datas.next_page_number }}">Next</a>
+                <a href="?page={{ datas.paginator.num_pages }}">Last &raquo;</a>
+            {% endif %}
+            </div>
+        </span>
+    </div>
+    </div>
+{% endblock %}

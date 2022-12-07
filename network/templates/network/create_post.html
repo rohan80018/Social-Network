@@ -1,0 +1,20 @@
+{% extends "network/layout.html" %}
+{% load static %}
+    {% block body %}
+        <h3 style="color:#F5F5DC;margin-top: 20px;margin-left: 30px;margin-bottom: 10vh;">Create Post</h3>
+        <form action="{% url 'create_post' pk=page %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                {% if msg %}
+                    <div style="margin-left:15vh;color: red;">
+                        {{msg}}</div>
+                {% endif %}
+                <textarea class="form-control" id="card" rows="8" autofocus  type="text" name="content" placeholder="Write something ..."></textarea>
+                <div class="form-control" id="file">
+                <p id="para">Add Photo:</p>
+                <input style="color: rgb(195, 193, 193);" type="file" id="img" name="upload" accept="image/*">
+                </div>  
+            </div>
+            <input class="btn btn-primary" type="submit" value="Post">
+        </form>
+    {% endblock %}

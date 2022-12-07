@@ -1,0 +1,192 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+}
+/* login/register.html */
+#log{
+  background:rgb(29,43,89); 
+  width:100vh;
+  margin-left:60px;
+  color: rgb(217, 219, 220);
+  border-color: rgb(114,130,181);
+}
+#msg{
+  color: red;
+  margin-left: 60px;
+  margin-bottom: 10px;
+}
+/* layout.html */
+#l{
+  background-color: rgb(20,29,54);
+    /* background-color: rgb(215, 231, 251); */
+}
+.nav-link:hover{
+  border-radius: 15px;
+  background-color: rgb(32,79,232);
+  
+}
+p{
+  color: rgb(230, 230, 230);
+}
+
+/* index.html */
+.post_div{
+    text-align: center;
+    /* margin-right: 55vh; */
+    margin-bottom: 20px;
+    border: 2px ridge rgb(114,130,181);
+    height: 8vh;
+    border-radius: 20vh;
+    width: 70vh;
+    padding-top: 0.5vh;
+
+    /* width: 130vh;
+    padding:20px;
+    border: 1px solid rgb(232, 230, 230); */
+}
+.post_div:hover{
+  box-shadow: 1px 1px 7px 1px  rgb(42,83,163);
+
+}
+#wht {
+    font-size: 4vh;
+    font-weight: 600;
+}
+#wht:hover{
+  color: #ffffff;
+  text-decoration:underline white;
+  
+}
+.card{
+    width: 78vh;
+    margin-bottom: 20px;
+    /* margin-right: 50vh; */
+    /* background-color: rgba(119, 174, 245, 0.242); */
+    background-color: rgb(21,42,87);
+    border-color: rgb(114,130,181);
+    
+}
+.card:hover{
+  box-shadow: 1px 1px 10px 1px  rgb(42,83,163);
+  /* rgb(137, 137, 138) */
+}
+
+
+/* create_post */
+.btn-primary{
+  margin-left: 15vh;
+  margin-top:5vh;
+  width: 80px;
+}
+#img{
+  margin-left: 15px;
+}
+#para{
+  display: inline-block;
+}
+#file{
+  margin-top: 10px;
+  height: 45px;
+  margin-left: 15vh;
+  background-color: rgb(29,43,89);
+  border-color: rgb(114,130,181);
+  width:170vh;
+}
+#card{
+  color: rgb(224, 224, 224);
+  margin-left: 15vh;
+  /* margin-top: 10vh;  */
+  width: 170vh;
+  background-color: rgb(29,43,89);
+  border-color: rgb(114,130,181);
+}
+
+/* profile.html */
+#profile_card{
+  width: 60vh;
+  border: 1px solid rgb(114,130,181);
+  background-color: rgb(21,42,87);
+  /* background-color: #141544; */
+  border-radius: 20px;
+  /* margin-left: 60vh; */
+  margin-top: 40px;
+  margin-bottom:20px;
+}
+#profile_card{
+  box-shadow: 1px 1px 7px 1px rgba(119, 174, 245, 0.242);
+
+}
+#follow{
+  text-align: center;
+  font-weight: 500;
+  color: rgb(218, 218, 220);
+}
+#button{
+  /* margin-left: 82.5vh; */
+  width:100px;
+  margin-bottom:10px;
+}
+.edit{
+  background: transparent;
+  border: 0px ;
+  border-radius: 24px;
+}
+.edit:hover{
+  box-shadow: 1px 1px 7px 1px  rgb(111, 113, 113);
+}
+.del{
+  background: transparent;
+  border: 0px ;
+  border-radius: 24px;
+}
+.del:hover{
+  box-shadow: 1px 1px 7px 1px rgb(255, 34, 75);
+  background-color: rgb(250, 25, 66);
+}
+#btn-i{
+  color: red;
+}
+#btn-i:hover{
+  color: white;
+}
+#heart { 
+  margin-top:3px;
+  margin-right:40vh;
+  position: relative; 
+  width: 0px; 
+  height: 0px; 
+  
+} 
+#heart:before, #heart:after { 
+  position:absolute;
+  content: ""; 
+  left: 12.5px; 
+  top: 0; 
+  /* 5:8 */
+  width: 12.5px; 
+  height: 20px; 
+  background: rgb(254, 44, 44);
+   
+  border-radius: 50px 50px 0 0; 
+  transform: rotate(-45deg); 
+  transform-origin: 0 100%; 
+} 
+#heart:after { 
+  left: 0; 
+  transform: rotate(45deg); 
+  transform-origin :100% 100%; 
+}
+#heart:hover{
+  border: 0.1px solid rgb(36, 50, 68);
+  cursor: pointer;
+}
+
+#page{
+  border: 1px solid rgb(114,130,181);
+  background-color: rgb(21,42,87);
+  border-radius: 4px;
+  
+  margin-bottom: 5px;
+}
